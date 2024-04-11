@@ -1,11 +1,11 @@
 import { defineStore } from 'pinia'
 
-export const useTransactionStore = defineStore('transaction', () => {
-  const transactions = ref([])
+export const useTxsStore = defineStore('txs', {
+  state: () => ({ txs: [] }),
 
-  function setTransactions(txs: []) {
-    transactions.value = txs
-  }
-
-  return { transactions, setTransactions }
+  actions: {
+    setTxs(txs: []) {
+      this.txs = txs
+    },
+  },
 })

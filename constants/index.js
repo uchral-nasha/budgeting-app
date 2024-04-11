@@ -42,3 +42,12 @@ export const initialState = {
   isDeposit: false,
   title: undefined,
 }
+
+export const ranges = [
+  { label: 'Last 1 W', duration: { days: 7 } },
+  { label: 'Last 2 W', duration: { days: 14 } },
+  { label: 'Last 1 M', duration: { days: 30 } },
+  { label: 'Last 3 M', duration: { months: 3 } },
+  { label: 'Last 6 M', duration: { months: 6 } },
+  { label: 'Last 1 Y', duration: { years: 1 } },
+]

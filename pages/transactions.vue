@@ -1,6 +1,5 @@
 <script setup>
 import { initialState, columns, categories } from '@/constants/index'
-import { useTransactionStore } from '~/stores/transaction'
 
 const client = useSupabaseClient()
 const user = useSupabaseUser()
@@ -16,11 +15,6 @@ const { pending, data: transactions } = await useAsyncData('transactions', async
     .order('created_at')
   return data
 })
-
-const transactionStore = useTransactionStore()
-const { setTransactions } = transactionStore
-
-setTransactions(transactions.value)
 
 const state = reactive({ ...initialState })
 
